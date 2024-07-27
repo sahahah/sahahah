@@ -1,0 +1,81 @@
+{%  extends 'events/main.html' %}
+
+{%  block content %}
+
+{%  include 'events/status.html' %}
+
+
+
+<br>
+<div class="row">
+<div class="col-md-5">
+<h5>USER </h5>
+<hr>
+<div class="card card-body">
+<a class="btn btn-primary btn-sm btn-block" href="">Create User</a>
+<table class="table table-sm">
+<tr>
+
+
+        <th></th>
+        <th>name</th>
+        <th>phone</th>
+        <th>email</th>
+
+</tr>
+
+    {%  for user in users %}
+    <tr>
+        <td><a class="btn btn-sm btn-info" href="{% url 'user' user.id %}">View</a></td>
+        <td>{{user.name}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.email}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+</div>
+<div class="col-md-7">
+<h5>EVENTS CREATED</h5>
+<hr>
+<div class="card card-body">
+<table class="table table-sm">
+<tr>
+<th>name</th>
+<th>club</th>
+<th>category</th>
+<th>date</th>
+<th>time</th>
+<th>venue</th>
+<th>team</th>
+<th>reg fee</th>
+<th>status</th>
+
+
+</tr>
+
+{%  for event in events %}
+<tr>
+    <td>{{event.name}}</td>
+    <td>{{event.club}}</td>
+    <td>{{event.category}}</td>
+    <td>{{event.date_event}}</td>
+    <td>{{event.time}}</td>
+    <td>{{event.venue}}</td>
+    <td>{{event.team_size}}</td>
+    <td>{{event.registration_fee}}</td>
+    <td><a class="btn btn-sm btn-info" href="{%  url 'update_event' event.id  %}">Update</td>
+
+    <td><a class="btn btn-sm btn-danger" href="{%  url 'delete_event' event.id  %}">Delete</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

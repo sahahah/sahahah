@@ -1,0 +1,951 @@
+{%  load static %}
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" type="text/css" href="{% static '/css/events_style.css' %}">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+</head>
+<style>
+   .hello-msg{
+    color: white;
+  }
+</style>
+
+<body id="#top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+      <h1>SFC Hub</h1>
+      <div class="header-actions">
+
+        <button class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </button> 
+
+       
+        <li>
+          <span class="hello-msg">Hello, {{request.user}}</span>
+        </li>
+        <a href="{% url 'logout' %}"> <button class="btn btn-primary">Logout</button> </a>
+        <!-- <a href="{% url 'register' %}"> <button class="btn btn-primary">-></button> </a> -->
+
+
+      </div>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="" class="logo">
+            <h1>SFC Hub</h1>
+          </a>
+
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="{% url 'homePage' %}" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="{% url 'eventsPage' %}" class="navbar-link">Events</a>
+          </li>
+
+          <li>
+            <a href="{% url 'clubPage' %}" class="navbar-link">Clubs</a>
+          </li>
+
+        
+
+          <li>
+            <a href="{% url 'user' user.id %}" class="navbar-link">Account</a>
+          </li>
+         
+
+        </ul>
+
+        <ul class="navbar-social-list">
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">SFC Hub</p>
+
+            <h1 class="h1 hero-title">
+              Welcome <strong>to SFC Hub</strong>, participate and be a part of St.Francis History
+            </h1>
+
+            <div class="meta-wrapper">
+
+          <a href="{% url 'eventsPage' %}"> 
+            <button class="btn btn-primary">
+              
+
+              <span>Browse Events</span>
+            </button></a>   
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #UPCOMING
+      -->
+
+      <section class="upcoming">
+        <div class="container">
+
+          <div class="flex-wrapper">
+
+            <div class="title-wrapper">
+              <p class="section-subtitle">Here's Our</p>
+
+              <h2 class="h2 section-title">Upcoming Events</h2>
+            </div>
+
+           
+          </div>
+
+          <ul class="movies-list  has-scrollbar">
+
+            <li>
+              <div class="movie-card">
+
+                <a href="movie.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/egame.jpeg' %}" alt="Clubs">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href=".movie.html">
+                    <h3 class="card-title">Building E-Game</h3>
+                  </a>
+
+                  <time datetime="2022">10/12/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT137M">137 min</time>
+                  </div>
+
+                  
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./movie-details.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/lafi.jpeg' %}"
+                      alt="Art Boulevard">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie-details.html">
+                    <h3 class="card-title">Art Boulevard</h3>
+                  </a>
+
+                  <time datetime="2022">11/8/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">126 min</time>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./movie-details.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/poet.jpeg' %}"
+                      alt="jadhn">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie-details.html">
+                    <h3 class="card-title">JASHN</h3>
+                  </a>
+
+                  <time datetime="2022">11/8/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">126 min</time>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./movie-details.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/ehas.jpeg' %}"
+                      alt="nukkad natak">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie-details.html">
+                    <h3 class="card-title">Nukkad Natak</h3>
+                  </a>
+
+                  <time datetime="2022">11/8/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">126 min</time>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="movie-card">
+
+                <a href="./movie-details.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/lafi.jpeg' %}"
+                      alt="Art Boulevard">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie-details.html">
+                    <h3 class="card-title">Art Boulevard</h3>
+                  </a>
+
+                  <time datetime="2022">11/8/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">126 min</time>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="movie-card">
+
+                <a href="./movie-details.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/lafi.jpeg' %}"
+                      alt="Art Boulevard">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie-details.html">
+                    <h3 class="card-title">Art Boulevard</h3>
+                  </a>
+
+                  <time datetime="2022">11/8/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">126 min</time>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="movie-card">
+
+                <a href="./movie-details.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/lafi.jpeg' %}"
+                      alt="Art Boulevard">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie-details.html">
+                    <h3 class="card-title">Art Boulevard</h3>
+                  </a>
+
+                  <time datetime="2022">11/8/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">126 min</time>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="movie-card">
+
+                <a href="./movie-details.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/lafi.jpeg' %}"
+                      alt="Art Boulevard">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie-details.html">
+                    <h3 class="card-title">Art Boulevard</h3>
+                  </a>
+
+                  <time datetime="2022">11/8/2022</time>
+                </div>
+
+                <div class="card-meta">
+                  
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">126 min</time>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="service">
+        <div class="container">
+
+          <div class="service-banner">
+            <figure>
+              <img src="{% static 'images/e.jpg' %}" alt="HD 4k resolution! only $3.99">
+            </figure>
+          </div>
+
+          <div class="service-content">
+
+            <p class="service-subtitle">Events Head</p>
+
+            <h2 class="h2 service-title">Jasmine</h2>
+
+            <p class="service-text">
+              St. Francis College for women in accordance with its core values gives highest impetus to professional ethics in fulfilling its role of sculpting women citizens who are 
+              Intellectually Competent, Morally Upright, Socially Committed, Emotionally Stable, 
+              Spiritually Inspired and Patriotic Women citizens of India. </p>
+
+            <ul class="service-list">
+
+              
+
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+ <!-- 
+        - #TOP RATED
+      -->
+
+      <section class="top-rated">
+        <div class="container">
+
+          <p class="section-subtitle">Event Clubs</p>
+
+          <h2 class="h2 section-title">College Clubs</h2>
+
+
+          <ul class="movies-list">
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/lafilogo.png' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">LA-FIESTA</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: Sathwika</div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9900384921</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/praklogo.png' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">PRAKRITI</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: monku</div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9298329833</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/cofelogo.png' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">COFEE</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: Lakshmi </div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9900384921</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+             <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/ari2.png' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">ARISTA</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: Faria Samreen</div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9900384921</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/foologo.png' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">FOOTBALL</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: Hima Bindhu</div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9900384921</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/galogo.jpg' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">La-Fiesta</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: lizzy</div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9900384921</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/gamelogo.webp' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">La-Fiesta</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: Robert</div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9900384921</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./clubs/index.html">
+                  <figure class="card-banner">
+                    <img src="{% static 'images/liologo.png' %}" alt="Lafiesta">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./movie.html">
+                    <h3 class="card-title">La-Fiesta</h3>
+                  </a>
+
+                  
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge">
+                  President: Monku</div>
+
+                  <div class="duration">
+                    <ion-icon name="call-outline"></ion-icon>
+
+                    <time datetime="PT122M">+91 9900384921</time>
+                  </div>
+
+                  
+                    
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta">
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="cta-title">Wisdom And Peace Through Love.</h2>
+
+            <p class="cta-text">
+              Join Us, And be a part of St.Francis History
+            </p>
+          </div>
+
+          
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand-wrapper">
+
+          <a href="./index.html" class="logo">
+            <h1>SFC Hub</h1>
+          </a>
+
+          <ul class="footer-list">
+
+            <li>
+              <a href="./index.html" class="footer-link">Home</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Events</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Clubs</a>
+            </li>
+
+           
+
+            <li>
+              <a href="#" class="footer-link">Accounts</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="quicklink-wrapper">
+
+          <ul class="quicklink-list">
+
+            <li>
+              <a href="#" class="quicklink-link">Faq</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Help center</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Terms of use</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Privacy</a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://www.facebook.com/stfranciscollege/" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://x.com/stfrancishyd?s=20" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://in.pinterest.com/stfrancishyd/" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://in.linkedin.com/school/stfranciscollegehyderabad/" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">francishub</a>. All Rights Reserved
+        </p>
+
+       
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+

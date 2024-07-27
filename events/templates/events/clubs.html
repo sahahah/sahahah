@@ -1,0 +1,144 @@
+{% load static %}
+
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/clubs.css' %}">
+<style>
+    .clnav{
+        color: aliceblue;
+    }
+</style>
+<body>
+        <!-- header -->
+    <header>
+        <div class="logo">SFC Hub</div>
+        <ul class="menu">
+            <li>
+                <a href="{% url 'homePage' %}" class="clnav">Home</a>
+              </li>
+    
+              <li>
+                <a href="{% url 'eventsPage' %}" class="clnav">Events</a>
+              </li>
+    
+              <li>
+                <a href="{% url 'clubPage' %}" class="clnav">Clubs</a>
+              </li>
+    
+            
+    
+              <li>
+                <a href="{% url 'user' user.id %}" class="clnav">Account</a>
+              </li>
+             
+        </ul>
+        <div class="search">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a9 9 0 0 0 5-1.5 4 4 0 0 0-4-3.5h-2a4 4 0 0 0-4 3.5 9 9 0 0 0 5 1.5Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+              </svg>
+        </div>
+    </header>
+
+    <!-- slider -->
+
+    <div class="slider">
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+                <img src="{% static 'images/arista.png' %}">
+                <div class="content">
+                    <p>Club</p>
+                    <h2>Arista</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/coffee.png' %}">
+                <div class="content">
+                    <p>Club</p>
+                    <h2>Cofee</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/lafi.png' %}">
+                <div class="content">
+                    <p>Club</p>
+                    <h2>La Fiesta</h2>
+                    <p>
+                        Welcome to our literature club, where words come alive and imaginations flourish! We are a community of passionate readers, writers, and lovers of all things literary.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/prak.png' %}">
+                <div class="content">
+                    <p>club</p>
+                    <h2>Prakriti</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/spectrum1.png' %}">
+                <div class="content">
+                    <p>club</p>
+                    <h2>Spectrum</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"></button>
+            <button id="next">></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+                <img src="{% static 'images/arista.png' %}">
+                <div class="content">
+                    Arista
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/coffee.png' %}">
+                <div class="content">
+                    Cofee
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/lafi.png' %}">
+                <div class="content">
+                    La Fiesta
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/prak.png' %}">
+                <div class="content">
+                    Prakriti
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'images/spectrum1.png' %}">
+                <div class="content">
+                    Spectrum
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/clubs.js' %}"></script>
+</body>
+</html>

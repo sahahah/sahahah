@@ -1,0 +1,142 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Registration Form</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2e2e2e;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 700px; /* Adjust the width as needed */
+    text-align: center;
+    display: flex;
+    flex-direction: row; /* Change flex direction to row */
+    align-items: center;
+  }
+  
+  .form-header {
+    margin-right: 10px; /* Add margin-right for spacing */
+  }
+  
+  .form-header img {
+    width: 100px;
+    border-radius: 100%;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  input[type="submit"] {
+    background-color: rgb(255, 78, 78);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #ffd013;
+  }
+
+  .image-container {
+    flex: 6; /* Take remaining space */
+    margin-left: 10px; /* Add margin-left for spacing */
+  }
+
+  .image-container img {
+    width: 300px; /* Make the image width 100% of its container */
+    height: 500px; /* Maintain aspect ratio */
+    max-height: 1000px; /* Limit maximum height of the image */
+    object-fit: cover; /* Cover the entire container */
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+      flex-direction: column; /* Change flex direction to column on smaller screens */
+      align-items: center;
+    }
+    
+    .image-container {
+      margin-left: 0; /* Remove margin-left on smaller screens */
+      margin-top: 20px; /* Add margin-top to separate image on smaller screens */
+    }
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+   
+        <div class="form-content">
+         <div class="form-header">
+            <img src="{% static 'images/download.png' %}">        
+         </div>
+  <h1>SIGN-UP</h1>
+  <i><h5>Join Us to Be a Part!</h5></i>
+  <form action="#" method="POST">
+        {% csrf_token %}
+        {{form.username.label}}
+        {{form.username}}
+        {{form.email.label}}
+        {{form.email}}
+        {{form.password1.label}}
+        {{form.password1}}
+        {{form.password2.label}}
+        {{form.password2}}
+    <input type="submit" value="Register">
+  </form>
+
+  {{form.errors}}
+
+  <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+</div>
+<div class="image-container">
+    <img src="{% static 'images/college.jpg' %}">
+  </div>
+</div>
+
+<script>
+    // JavaScript for form validation and enhancement
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the registration form
+      const form = document.getElementById('registration-form');
+      
+      // Add event listener for form submission
+      form.addEventListener('submit', function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+        
+        // Validate the form fields
+        // You can add your validation logic here
+        
+        // Submit the form if validation passes
+        form.submit();
+      });
+    });
+    </script>
+
+</body>
+</html>
